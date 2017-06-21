@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login and Registration</title>
+  </head>
+  <body>
+    <h1>Signup!</h1>
+
+    {% if error %}
+    {{ error }}
+    {% endif %}
+    <form method="POST" action="{% url 'signup' %}">
+      {% csrf_token %}
+      <label>Username:</label>
+      <br />
+      <input type="text" name="username" />
+      <br />
+      <label>First:</label>
+      <br />
+      <input type="text" name="first_name" />
+      <br />
+      <label>Last: </label>
+      <br />
+      <input type="text" name="last_name" />
+      <br />
+      <label>Email: </label>
+      <br />
+      <input type='email' name="email" />
+      <br />
+      <label>Password:</label>
+      <br />
+      <input type="Password" name="password1" />
+      <br />
+      <label>Confirm Password:</label>
+      <br />
+      <input type="Password" name="password2" />
+      <br />
+      <br />
+      <input type="submit" value="Submit"/>
+    </form>
+    <br />
+    Already have a username? <a href="/login">Login Here!</a>
+  </body>
+</html>
